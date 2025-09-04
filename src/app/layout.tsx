@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Fira_Code } from "next/font/google";
 import "./globals.css";
-
+import Navbar from "@/components/ui/Navbar/Navbar";
 
 const firaCode = Fira_Code({
   variable: "--font-fira-code",
@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "Melek ElMokhtar's Portfolio",
 };
 
+//TODO: Implement Lanyard or Profile Card
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -20,9 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${firaCode.variable} antialiased`}
-      >
+      <body className={`${firaCode.variable} antialiased`}>
+        <Navbar />
+
         {children}
       </body>
     </html>

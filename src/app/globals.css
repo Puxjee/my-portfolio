@@ -96,7 +96,11 @@
 
 body {
   font-family: var(--font-fira-code);
+
 }
+
+html, body { margin: 0; padding: 0; }
+
 
 .dark {
   --background: oklch(0.145 0 0);

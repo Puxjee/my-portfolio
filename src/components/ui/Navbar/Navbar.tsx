@@ -37,8 +37,10 @@ const Navbar = () => {
     handleActiveItem();
   }, [pathname]);
   return (
-    <div className="w-screen top-0 sticky h-16 bg flex items-center justify-between py-4 px-24 ">
-      <div className="text-white/80 font-bold text-xl">Meleek</div>
+    <div className="border-b-[#C778DD] border-b-2 w-full top-0 sticky h-16 bg flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 overflow-x-hidden">
+      <div className="text-white/80 font-bold text-xl cursor-pointer hover:text-[#C778DD] transition-colors duration-150">
+        Meleek
+      </div>
       <div>
         <ul className="flex gap-8 text-md">
           <li>
@@ -99,30 +101,32 @@ const Navbar = () => {
               </span>
             </Link>
           </li>
-          <Select>
-            <SelectTrigger
-              size="navbar"
-              className="bg-transparent text-gray cursor-pointer"
-            >
-              <SelectValue placeholder="EN" />
-            </SelectTrigger>
-            <SelectContent className="bg-gray-900/95 border border-gray-700 text-gray backdrop-blur-sm shadow-lg min-w-[4rem] w-16">
-              <SelectItem
-                value="en"
-                className="cursor-pointer hover:bg-gray-800 focus:bg-gray-800 text-gray hover:text-primary focus:text-primary"
+          <li className="flex items-center">
+            <Select>
+              <SelectTrigger
+                size="navbar"
+                className="bg-transparent text-gray cursor-pointer"
               >
-                <span className="text-primary">#</span>
-                <span>EN</span>
-              </SelectItem>
-              <SelectItem
-                value="fr"
-                className="cursor-pointer hover:bg-gray-800 focus:bg-gray-800 text-gray hover:text-primary focus:text-primary"
-              >
-                <span className="text-primary">#</span>
-                <span>FR</span>
-              </SelectItem>
-            </SelectContent>
-          </Select>
+                <SelectValue placeholder="EN" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-900/95 border border-gray-700 text-gray backdrop-blur-sm shadow-lg min-w-[4rem] w-16">
+                <SelectItem
+                  value="en"
+                  className="cursor-pointer hover:bg-gray-800 focus:bg-gray-800 text-gray hover:text-primary focus:text-primary"
+                >
+                  <span className="text-primary">#</span>
+                  <span>EN</span>
+                </SelectItem>
+                <SelectItem
+                  value="fr"
+                  className="cursor-pointer hover:bg-gray-800 focus:bg-gray-800 text-gray hover:text-primary focus:text-primary"
+                >
+                  <span className="text-primary">#</span>
+                  <span>FR</span>
+                </SelectItem>
+              </SelectContent>
+            </Select>
+          </li>
         </ul>
       </div>
     </div>
