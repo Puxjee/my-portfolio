@@ -5,6 +5,7 @@ import React from "react";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import Button from "../shared/Button/Button";
 import Quote from "./Quote/Quote";
+import HangingSocials from "./HangingSocials/HangingSocials";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -47,7 +48,7 @@ const Hero = () => {
             height={300}
           />
           <p className="border-1 p-3 text-gray text-sm flex items-center">
-            <SquareIcon fill="blue" className="inline-block mr-2" />
+            <SquareIcon fill="#77a2d1" className="inline-block mr-2" />
             Currently working <span className="text-blue-300 mx-2">@</span>{" "}
             <a
               href="http://imex.com.tn/"
@@ -74,6 +75,7 @@ const Hero = () => {
           author="Dr. Who"
         />
       </div>
+      <HangingSocials />
     </div>
   );
 };
