@@ -7,16 +7,18 @@ const Separator = ({
   textColor,
   separatorColor,
   viewAllColor,
+  showViewAll = true,
 }: {
   text: string;
   href: string;
   textColor: string;
   separatorColor: string;
   viewAllColor: string;
+  showViewAll?: boolean;
 }) => {
   return (
-    <div className="flex items-center my-8 px-46 py-2 justify-between gap-50">
-      <div className="flex items-center">
+    <div className="flex items-center my-8 py-2 w-full max-w-6xl">
+      <div className="flex items-center flex-shrink-0">
         <span
           className="text-2xl font-semibold"
           style={{ color: separatorColor }}
@@ -34,10 +36,13 @@ const Separator = ({
           style={{ borderColor: separatorColor }}
         />{" "}
       </div>
-      <div>
+      <div className="flex-grow"></div>
+      <div className="flex-shrink-0">
         <Link href={href} className="group">
           <span
-            className="text-md font-medium transition-colors duration-300 text-[var(--view-color)] group-hover:text-[var(--sep-color)]"
+            className={`text-md font-medium transition-colors duration-300 text-[var(--view-color)] group-hover:text-[var(--sep-color)] ${
+              showViewAll ? "opacity-100" : "opacity-0 pointer-events-none"
+            }`}
             style={
               {
                 "--sep-color": separatorColor,

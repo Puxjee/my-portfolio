@@ -34,7 +34,7 @@ const Hero = () => {
           </p>
           <Button
             text="Contact me!!"
-            className="border-[#C778DD] hover:bg-[#C778DD]/[0.08] transition-all duration-300 ease-in-out"
+            className="border-[#C778DD] hover:bg-[#C778DD]/[0.08] transition-all duration-300 ease-in-out w-38 mt-8"
             onClick={() => {
               window.location.href = "mailto:melek.elmokhtar@gmail.com";
             }}

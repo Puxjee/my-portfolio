@@ -37,7 +37,7 @@ const Navbar = () => {
     handleActiveItem();
   }, [pathname]);
   return (
-    <div className="border-b-[#C778DD] border-b-2 w-full top-0 sticky h-16 bg flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 overflow-x-hidden">
+    <div className="border-b-[#C778DD] border-b-2 w-full top-0 sticky h-16 bg-black/20 backdrop-blur-md flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 overflow-x-hidden z-50">
       <div className="text-white/80 font-bold text-xl cursor-pointer hover:text-[#C778DD] transition-colors duration-150">
         Meleek
       </div>
