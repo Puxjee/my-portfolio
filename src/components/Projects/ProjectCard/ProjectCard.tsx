@@ -48,6 +48,7 @@ const ProjectCard = ({
           className="w-full h-48 object-cover"
           height={192}
           width={320}
+          unoptimized
         />
       </div>
 

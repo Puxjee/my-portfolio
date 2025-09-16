@@ -4,9 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "dev:webpack": "cross-env NEXT_USE_WEBPACK=true next dev",
+    "dev:turbopack": "next dev --turbopack",
     "build": "next build --turbopack",
+    "build:webpack": "cross-env NEXT_USE_WEBPACK=true next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sri:hash": "node ./scripts/generate-sri.js",
+    "scan:deps": "pnpm audit --json || npm audit --json"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -31,6 +36,7 @@
     "zod": "^4.1.8"
   },
   "devDependencies": {
+    "cross-env": "^7",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

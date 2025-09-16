@@ -9,7 +9,7 @@ import {
   Phone,
 } from "lucide-react";
 
-const MobileDetector = ({ children }) => {
+const MobileDetector = ({ children }: { children: React.ReactNode }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
