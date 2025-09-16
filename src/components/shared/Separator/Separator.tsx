@@ -17,7 +17,7 @@ const Separator = ({
   showViewAll?: boolean;
 }) => {
   return (
-    <div className="flex items-center my-8 py-2 w-full max-w-6xl">
+    <div className="flex items-center my-4 py-2 w-full max-w-6xl">
       <div className="flex items-center flex-shrink-0">
         <span
           className="text-2xl font-semibold"

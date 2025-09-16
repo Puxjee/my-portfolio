@@ -1,4 +1,5 @@
 import About from "@/components/About/About";
+import Contacts from "@/components/Contacts/Contacts";
 import Hero from "@/components/Hero/Hero";
 import Projects from "@/components/Projects/Projects";
 import Separator from "@/components/shared/Separator/Separator";
@@ -15,6 +16,7 @@ const Home = () => {
         textColor="#FFFFFF"
         separatorColor="#C778DD"
         viewAllColor="#ABB2BF"
+        showViewAll={false}
       />
       <Projects />
       <Separator
@@ -35,6 +37,15 @@ const Home = () => {
         viewAllColor="#ABB2BF"
       />
       <About />
+      <Separator
+        text="contacts"
+        href="/contacts"
+        showViewAll={false}
+        textColor="#FFFFFF"
+        separatorColor="#C778DD"
+        viewAllColor="#ABB2BF"
+      />
+      <Contacts />
     </div>
   );
 };
