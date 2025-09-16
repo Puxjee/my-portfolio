@@ -4,7 +4,10 @@ import ProfileCard from "../ProfileCard/ProfileCard";
 
 const About = () => {
   return (
-    <div className="py-4 flex flex-row items-center justify-between gap-50">
+    <div
+      id="about"
+      className="py-4 flex flex-row items-center justify-between gap-50"
+    >
       <div className="max-w-xl text-gray-300 text-left space-y-6">
         {/*about me text */}
         👋 Hi, I’m Melek ElMokhtar, a Full-Stack Web Developer passionate about

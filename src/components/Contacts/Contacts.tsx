@@ -44,7 +44,10 @@ const Contacts = () => {
   };
 
   return (
-    <div className="flex flex-row items-start justify-center gap-12 px-8 py-12">
+    <div
+      id="contacts"
+      className="flex flex-row items-start justify-center gap-12 px-8 py-12"
+    >
       {/* left side with info... */}
       <div className="max-w-xl text-gray-300 text-left space-y-6">
         {" "}

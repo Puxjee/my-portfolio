@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 const Separator = ({
+  id,
   text,
   href,
   textColor,
@@ -9,6 +10,7 @@ const Separator = ({
   viewAllColor,
   showViewAll = true,
 }: {
+  id?: string;
   text: string;
   href: string;
   textColor: string;
@@ -17,7 +19,7 @@ const Separator = ({
   showViewAll?: boolean;
 }) => {
   return (
-    <div className="flex items-center my-4 py-2 w-full max-w-6xl">
+    <div id={id} className="flex items-center my-4 py-2 w-full max-w-6xl">
       <div className="flex items-center flex-shrink-0">
         <span
           className="text-2xl font-semibold"

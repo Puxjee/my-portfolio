@@ -58,7 +58,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section id="projects" className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-wrap gap-6 justify-start">
           {projectsData.map((project, index) => (

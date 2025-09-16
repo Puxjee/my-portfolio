@@ -101,6 +101,34 @@ body {
 
 html, body { margin: 0; padding: 0; }
 
+html { scroll-behavior: smooth; }
+
+/* Custom purple scrollbar */
+/* WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #C778DD; /* purple */
+  border-radius: 9999px;
+  border: 3px solid rgba(0,0,0,0.0);
+  transition: background-color 150ms ease, box-shadow 150ms ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b067c9;
+  box-shadow: 0 0 10px rgba(199,120,221,0.45);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #C778DD transparent;
+}
+
 
 .dark {
   --background: oklch(0.145 0 0);
@@ -143,4 +171,10 @@ html, body { margin: 0; padding: 0; }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Keep some space below the sticky navbar so the separator remains visible
+   when scrolling to sections. Adjust the value if your navbar height changes. */
+#projects, #skills, #about, #contacts, #sep-projects, #sep-skills, #sep-about, #sep-contacts {
+  scroll-margin-top: 5rem;
 }

@@ -39,7 +39,10 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-12  grid grid-cols-2 justify-center gap-6 max-w-5xl w-full">
+    <section
+      id="skills"
+      className="py-12  grid grid-cols-2 justify-center gap-6 max-w-5xl w-full"
+    >
       <Image
         src="skills.svg"
         alt="Skills Decoration"
