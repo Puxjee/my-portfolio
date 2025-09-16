@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' https://cdn.ampproject.org",
+  "script-src 'self' 'unsafe-inline' https://cdn.ampproject.org",
   "style-src 'self' 'unsafe-inline' https:",
   "img-src 'self' data: https:",
   "connect-src 'self' https://api.github.com https://*.vercel-insights.com https://formspree.io",
