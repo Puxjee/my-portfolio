@@ -40,7 +40,7 @@ const Hero = () => {
             web applications.
           </p>
           <a
-            href="/CV_MelekElMokhtar_EN.pdf"
+            href="/CV_MelekElMokhtar_FR.pdf"
             download
             aria-label={String(t("hero.downloadCV"))}
             className="inline-block mt-8"

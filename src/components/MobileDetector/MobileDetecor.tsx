@@ -7,6 +7,7 @@ import {
   Github,
   Linkedin,
   Phone,
+  Download,
 } from "lucide-react";
 
 const MobileDetector = ({ children }: { children: React.ReactNode }) => {
@@ -46,6 +47,15 @@ const MobileDetector = ({ children }: { children: React.ReactNode }) => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const handleDownloadCV = () => {
+    const link = document.createElement("a");
+    link.href = "/CV_MelekElMokhtar_FR.pdf";
+    link.download = "CV_MelekElMokhtar_FR.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   if (isLoading) {
     return (
@@ -99,6 +109,15 @@ const MobileDetector = ({ children }: { children: React.ReactNode }) => {
                 <span>Best viewed on desktop</span>
               </div>
             </div>
+
+            {/* CV Download Button */}
+            <button
+              onClick={handleDownloadCV}
+              className="w-full bg-gradient-to-r from-[#C778DD] to-[#77a2d1] hover:from-[#C778DD]/90 hover:to-[#77a2d1]/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl"
+            >
+              <Download size={20} />
+              <span>Download My CV</span>
+            </button>
 
             {/* Quick info section */}
             <div className="bg-[#1a252f] border border-gray-700 rounded-lg p-4">
