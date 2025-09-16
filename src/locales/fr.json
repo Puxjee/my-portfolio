@@ -36,7 +36,8 @@
     "craft": "Je crée",
     "contactButton": "Contactez-moi !!",
     "currentlyWorking": "Actuellement chez",
-    "words": ["Evolutif", "Moderne", "Convivial"]
+    "words": ["Evolutif", "Moderne", "Convivial"],
+    "downloadCV": "Télécharger mon CV!!"
   },
   "projects": {
     "liveText": "En ligne ~~>",

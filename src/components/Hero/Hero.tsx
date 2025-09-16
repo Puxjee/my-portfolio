@@ -39,13 +39,17 @@ const Hero = () => {
             </span>{" "}
             web applications.
           </p>
-          <Button
-            text={String(t("hero.contactButton"))}
-            className="border-[#C778DD] hover:bg-[#C778DD]/[0.08] transition-all duration-300 ease-in-out w-38 mt-8"
-            onClick={() => {
-              window.location.href = "mailto:melek.elmokhtar@gmail.com";
-            }}
-          />
+          <a
+            href="/CV_MelekElMokhtar_EN.pdf"
+            download
+            aria-label={String(t("hero.downloadCV"))}
+            className="inline-block mt-8"
+          >
+            <Button
+              text={String(t("hero.downloadCV"))}
+              className="border-[#C778DD] hover:bg-[#C778DD]/[0.08] transition-all duration-300 ease-in-out"
+            />
+          </a>
         </div>
         <div className="flex flex-col items-center flex-1">
           <Image

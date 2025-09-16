@@ -36,7 +36,8 @@
     "craft": "I craft",
     "contactButton": "Contact me!!",
     "currentlyWorking": "Currently working",
-    "words": ["Scalable", "Modern", "User-friendly"]
+    "words": ["Scalable", "Modern", "User-friendly"],
+    "downloadCV": "Download My Resume!!"
   },
   "projects": {
     "liveText": "Live ~~>",
