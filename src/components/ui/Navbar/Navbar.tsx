@@ -93,7 +93,7 @@ const Navbar = () => {
       className="border-b-[#C778DD] border-b-2 w-full top-0 sticky h-16 bg-black/20 backdrop-blur-md flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 overflow-x-hidden z-50"
     >
       <div className="text-white/80 font-bold text-xl cursor-pointer hover:text-[#C778DD] transition-colors duration-150">
-  {String(t("nav.brand", "Meleek"))}
+        {String(t("nav.brand", "Meleek"))}
       </div>
       <div>
         <ul className="flex gap-8 text-md">
@@ -118,7 +118,9 @@ const Navbar = () => {
               }`}
             >
               <span className="text-primary">#</span>
-              <span className="text-gray ">{String(t("nav.home", "home"))}</span>
+              <span className="text-gray ">
+                {String(t("nav.home", "home"))}
+              </span>
             </Link>
           </li>
           <li>
@@ -179,13 +181,18 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="flex items-center">
-            <Select value={locale} onValueChange={(v: string) => setLocale(v as Locale)}>
+            <Select
+              value={locale}
+              onValueChange={(v: string) => setLocale(v as Locale)}
+            >
               <SelectTrigger
                 size="navbar"
                 className="bg-transparent text-gray cursor-pointer"
               >
                 <SelectValue
-                  placeholder={String(t("nav.selectPlaceholder", locale.toUpperCase()))}
+                  placeholder={String(
+                    t("nav.selectPlaceholder", locale.toUpperCase())
+                  )}
                 />
               </SelectTrigger>
               <SelectContent className="bg-gray-900/95 border border-gray-700 text-gray backdrop-blur-sm shadow-lg min-w-[4rem] w-16">

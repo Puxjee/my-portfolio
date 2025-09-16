@@ -50,8 +50,12 @@ const Contacts = () => {
       {/* left side with info... */}
       <div className="max-w-xl text-gray-300 text-left space-y-6">
         {" "}
-  <h1 className="text-4xl font-bold">{String(t("contacts.howTo"))}</h1>{" "}
-  <p className="text-sm text-gray-400">{String(t("contacts.feelFree"))}</p>{" "}
+        <h1 className="text-4xl font-bold">
+          {String(t("contacts.howTo"))}
+        </h1>{" "}
+        <p className="text-sm text-gray-400">
+          {String(t("contacts.feelFree"))}
+        </p>{" "}
         <div className="mt-4 text-xs text-gray-400 border-2 border-gray-400 w-1/2 p-4 space-y-2">
           {" "}
           <a
@@ -95,7 +99,9 @@ const Contacts = () => {
             <h2 className="text-lg text-primary font-semibold">
               {String(t("contacts.leaveMessage"))}
             </h2>
-            <p className="text-xs text-gray-400">{String(t("contacts.iWillReach"))}</p>
+            <p className="text-xs text-gray-400">
+              {String(t("contacts.iWillReach"))}
+            </p>
           </div>
 
           {/* Name + Email */}
@@ -166,7 +172,9 @@ const Contacts = () => {
               disabled={isSubmitting}
               className="cursor-pointer text-white px-5 py-2 border border-purple-500 bg-transparent hover:bg-purple-600 hover:border-purple-600 transition-colors disabled:opacity-50"
             >
-              {isSubmitting ? String(t("contacts.sending")) : String(t("contacts.send"))}
+              {isSubmitting
+                ? String(t("contacts.sending"))
+                : String(t("contacts.send"))}
             </button>
             {isSubmitSuccessful && (
               <span className="text-sm text-green-400 ml-3">

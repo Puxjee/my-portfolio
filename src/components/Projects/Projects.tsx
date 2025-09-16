@@ -18,7 +18,11 @@ const Projects = () => {
   const raw = t("projects.list", []) as unknown;
   const projectsData: Project[] = Array.isArray(raw) ? (raw as Project[]) : [];
 
-  const icons = [<Github key="icon-github-0" />, <ExternalLink key="icon-external-1" />, <Github key="icon-github-2" />];
+  const icons = [
+    <Github key="icon-github-0" />,
+    <ExternalLink key="icon-external-1" />,
+    <Github key="icon-github-2" />,
+  ];
 
   return (
     <section id="projects" className="py-16 px-4">

@@ -35,8 +35,12 @@ const ProjectCard = ({
   codeLabel = undefined,
 }: ProjectCardProps) => {
   const { t } = useI18n();
-  const resolvedLiveText = String(liveText ?? t("projects.liveText", "Live ~~>"));
-  const resolvedCodeLabel = String(codeLabel ?? t("projects.codeLabel", "Code"));
+  const resolvedLiveText = String(
+    liveText ?? t("projects.liveText", "Live ~~>")
+  );
+  const resolvedCodeLabel = String(
+    codeLabel ?? t("projects.codeLabel", "Code")
+  );
   const wipLabel = String(t("projects.wip", "WIP"));
   return (
     <div className="border border-[#ABB2BF] bg-[#282C33] w-80 max-w-sm">

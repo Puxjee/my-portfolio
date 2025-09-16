@@ -37,8 +37,8 @@ const About = () => {
         enableMobileTilt={false}
         mobileTiltSensitivity={0}
         miniAvatarUrl=""
-  name={String(t("profile.name"))}
-  title={String(t("profile.title"))}
+        name={String(t("profile.name"))}
+        title={String(t("profile.title"))}
         handle="puxje"
         showUserInfo={true}
       />
