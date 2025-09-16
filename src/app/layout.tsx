@@ -5,6 +5,7 @@ import Navbar from "@/components/ui/Navbar/Navbar";
 import { I18nProvider } from "@/lib/i18n";
 import MobileDetector from "@/components/MobileDetector/MobileDetecor";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/next";
 
 const firaCode = Fira_Code({
   variable: "--font-fira-code",
@@ -45,6 +46,7 @@ export default function RootLayout({
           <MobileDetector>
             <Navbar />
             {children}
+            <Analytics />
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ""} />
           </MobileDetector>
         </I18nProvider>
