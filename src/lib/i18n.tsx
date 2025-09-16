@@ -11,7 +11,7 @@ import fr from "@/locales/fr.json";
 
 type Locale = "en" | "fr";
 
-const LOCALES: Record<Locale, Record<string, any>> = {
+const LOCALES: Record<Locale, Record<string, unknown>> = {
   en,
   fr,
 };
@@ -19,7 +19,7 @@ const LOCALES: Record<Locale, Record<string, any>> = {
 interface I18nContextValue {
   locale: Locale;
   setLocale: (l: Locale) => void;
-  t: (path: string, fallback?: any) => any;
+  t: (path: string, fallback?: unknown) => unknown;
 }
 
 const I18nContext = createContext<I18nContextValue | null>(null);
@@ -37,18 +37,21 @@ export const I18nProvider: React.FC<{ children: React.ReactNode }> = ({
     try {
       window.localStorage.setItem("locale", locale);
       document.documentElement.lang = locale;
-    } catch (e) {}
+    } catch {
+      /* ignore */
+    }
   }, [locale]);
 
   const setLocale = (l: Locale) => setLocaleState(l);
 
   const t = useMemo(() => {
-    return (path: string, fallback: any = undefined) => {
+    return (path: string, fallback: unknown = undefined) => {
       const parts = path.split(".");
-      let cur: any = LOCALES[locale];
+      let cur: unknown = LOCALES[locale];
       for (const p of parts) {
         if (cur === undefined || cur === null) return fallback;
-        cur = cur[p];
+        if (typeof cur !== "object") return fallback;
+        cur = (cur as Record<string, unknown>)[p];
       }
       return cur === undefined || cur === null ? fallback : cur;
     };

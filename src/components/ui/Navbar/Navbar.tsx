@@ -7,7 +7,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import React, { useCallback, useEffect, useState } from "react";
+import type { Locale } from "@/lib/i18n";
 import { useI18n } from "@/lib/i18n";
 
 const Navbar = () => {
@@ -15,7 +17,7 @@ const Navbar = () => {
   const [activeItem, setActiveItem] = useState("");
   const { t, locale, setLocale } = useI18n();
 
-  const setActiveFromLocation = () => {
+  const setActiveFromLocation = useCallback(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       const hash = window.location.hash.replace("#", "");
       switch (hash) {
@@ -61,7 +63,7 @@ const Navbar = () => {
         setActiveItem("");
         break;
     }
-  };
+  }, [pathname]);
 
   useEffect(() => {
     setActiveFromLocation();
@@ -70,7 +72,7 @@ const Navbar = () => {
       window.addEventListener("hashchange", onHashChange);
       return () => window.removeEventListener("hashchange", onHashChange);
     }
-  }, [pathname]);
+  }, [setActiveFromLocation]);
 
   const scrollToIdWithOffset = (id: string, e?: React.MouseEvent) => {
     if (e) e.preventDefault();
@@ -91,12 +93,12 @@ const Navbar = () => {
       className="border-b-[#C778DD] border-b-2 w-full top-0 sticky h-16 bg-black/20 backdrop-blur-md flex items-center justify-between py-4 px-6 md:px-12 lg:px-24 overflow-x-hidden z-50"
     >
       <div className="text-white/80 font-bold text-xl cursor-pointer hover:text-[#C778DD] transition-colors duration-150">
-        {t("nav.brand", "Meleek")}
+  {String(t("nav.brand", "Meleek"))}
       </div>
       <div>
         <ul className="flex gap-8 text-md">
           <li>
-            <a
+            <Link
               href="/"
               onClick={(e) => {
                 if (
@@ -116,11 +118,11 @@ const Navbar = () => {
               }`}
             >
               <span className="text-primary">#</span>
-              <span className="text-gray ">{t("nav.home", "home")}</span>
-            </a>
+              <span className="text-gray ">{String(t("nav.home", "home"))}</span>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/#sep-projects"
               onClick={(e) => {
                 setActiveItem("works");
@@ -134,12 +136,12 @@ const Navbar = () => {
             >
               <span className="text-primary">#</span>
               <span className="text-gray group-hover:text-white transition-colors duration-300">
-                {t("nav.works", "works")}
+                {String(t("nav.works", "works"))}
               </span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/#sep-about"
               onClick={(e) => {
                 setActiveItem("about-me");
@@ -153,12 +155,12 @@ const Navbar = () => {
             >
               <span className="text-primary">#</span>
               <span className="text-gray group-hover:text-white transition-colors duration-300">
-                {t("nav.about", "about-me")}
+                {String(t("nav.about", "about-me"))}
               </span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
+            <Link
               href="/#sep-contacts"
               onClick={(e) => {
                 setActiveItem("contacts");
@@ -172,18 +174,18 @@ const Navbar = () => {
             >
               <span className="text-primary">#</span>
               <span className="text-gray group-hover:text-white transition-colors duration-300">
-                {t("nav.contacts", "contacts")}
+                {String(t("nav.contacts", "contacts"))}
               </span>
-            </a>
+            </Link>
           </li>
           <li className="flex items-center">
-            <Select value={locale} onValueChange={(v) => setLocale(v as any)}>
+            <Select value={locale} onValueChange={(v: string) => setLocale(v as Locale)}>
               <SelectTrigger
                 size="navbar"
                 className="bg-transparent text-gray cursor-pointer"
               >
                 <SelectValue
-                  placeholder={t("nav.selectPlaceholder", locale.toUpperCase())}
+                  placeholder={String(t("nav.selectPlaceholder", locale.toUpperCase()))}
                 />
               </SelectTrigger>
               <SelectContent className="bg-gray-900/95 border border-gray-700 text-gray backdrop-blur-sm shadow-lg min-w-[4rem] w-16">

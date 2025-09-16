@@ -1,4 +1,4 @@
-import { QuoteIcon, TextQuote } from "lucide-react";
+import { QuoteIcon } from "lucide-react";
 import React from "react";
 
 const Quote = ({

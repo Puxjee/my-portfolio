@@ -1,5 +1,5 @@
 "use client";
-import { ExternalLink, Link, Square, SquareIcon } from "lucide-react";
+import { ExternalLink, SquareIcon } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { useI18n } from "@/lib/i18n";
@@ -27,12 +27,12 @@ const Hero = () => {
       <div className="gap-24 items-center flex justify-center">
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-white leading-tight mb-6 w-115">
-            {t("hero.greeting")}{" "}
+            {String(t("hero.greeting"))}{" "}
             <span className="text-primary italic">Melek ElMokhtar</span>, a{" "}
-            <span className="text-primary">{t("hero.role")}</span>
+            <span className="text-primary">{String(t("hero.role"))}</span>
           </h1>
           <p className="text-lg text-gray w-130">
-            {t("hero.craft")}{" "}
+                {String(t("hero.craft"))}{" "}
             <span className="text-primary">
               {text}
               <Cursor cursorBlinking={false} />
@@ -40,7 +40,7 @@ const Hero = () => {
             web applications.
           </p>
           <Button
-            text={t("hero.contactButton")}
+                text={String(t("hero.contactButton"))}
             className="border-[#C778DD] hover:bg-[#C778DD]/[0.08] transition-all duration-300 ease-in-out w-38 mt-8"
             onClick={() => {
               window.location.href = "mailto:melek.elmokhtar@gmail.com";
@@ -56,7 +56,7 @@ const Hero = () => {
           />
           <p className="border-1 p-3 text-gray text-sm flex items-center">
             <SquareIcon fill="#77a2d1" className="inline-block mr-2" />
-            {t("hero.currentlyWorking")}{" "}
+                {String(t("hero.currentlyWorking"))}{" "}
             <span className="text-blue-300 mx-2">@</span>{" "}
             <a
               href="http://imex.com.tn/"

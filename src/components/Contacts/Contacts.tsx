@@ -5,7 +5,6 @@ import React from "react";
 import { useI18n } from "@/lib/i18n";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must have at least 2 characters"),
@@ -23,9 +22,7 @@ const Contacts = () => {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema as any),
-  });
+  } = useForm<ContactFormData>();
 
   const onSubmit = async (data: ContactFormData) => {
     try {
@@ -53,8 +50,8 @@ const Contacts = () => {
       {/* left side with info... */}
       <div className="max-w-xl text-gray-300 text-left space-y-6">
         {" "}
-        <h1 className="text-4xl font-bold">{t("contacts.howTo")}</h1>{" "}
-        <p className="text-sm text-gray-400">{t("contacts.feelFree")}</p>{" "}
+  <h1 className="text-4xl font-bold">{String(t("contacts.howTo"))}</h1>{" "}
+  <p className="text-sm text-gray-400">{String(t("contacts.feelFree"))}</p>{" "}
         <div className="mt-4 text-xs text-gray-400 border-2 border-gray-400 w-1/2 p-4 space-y-2">
           {" "}
           <a
@@ -96,9 +93,9 @@ const Contacts = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="w-full" noValidate>
           <div className="border-b border-gray-700 pb-3 mb-4">
             <h2 className="text-lg text-primary font-semibold">
-              {t("contacts.leaveMessage")}
+              {String(t("contacts.leaveMessage"))}
             </h2>
-            <p className="text-xs text-gray-400">{t("contacts.iWillReach")}</p>
+            <p className="text-xs text-gray-400">{String(t("contacts.iWillReach"))}</p>
           </div>
 
           {/* Name + Email */}
@@ -107,7 +104,7 @@ const Contacts = () => {
               <input
                 {...register("name")}
                 type="text"
-                placeholder={t("contacts.placeholders.name")}
+                placeholder={String(t("contacts.placeholders.name"))}
                 className="bg-transparent border border-gray-600 px-3 py-2 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
               />
               {errors.name && (
@@ -121,7 +118,7 @@ const Contacts = () => {
               <input
                 {...register("email")}
                 type="email"
-                placeholder={t("contacts.placeholders.email")}
+                placeholder={String(t("contacts.placeholders.email"))}
                 className="bg-transparent border border-gray-600 px-3 py-2 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
               />
               {errors.email && (
@@ -137,7 +134,7 @@ const Contacts = () => {
             <input
               {...register("title")}
               type="text"
-              placeholder={t("contacts.placeholders.title")}
+              placeholder={String(t("contacts.placeholders.title"))}
               className="w-full mb-3 bg-transparent border border-gray-600 px-3 py-2 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
             {errors.title && (
@@ -151,7 +148,7 @@ const Contacts = () => {
           <div className="flex flex-col">
             <textarea
               {...register("message")}
-              placeholder={t("contacts.placeholders.message")}
+              placeholder={String(t("contacts.placeholders.message"))}
               rows={7}
               className="w-full mb-4 bg-transparent border border-gray-600 px-3 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500 resize-none"
             />
@@ -169,11 +166,11 @@ const Contacts = () => {
               disabled={isSubmitting}
               className="cursor-pointer text-white px-5 py-2 border border-purple-500 bg-transparent hover:bg-purple-600 hover:border-purple-600 transition-colors disabled:opacity-50"
             >
-              {isSubmitting ? t("contacts.sending") : t("contacts.send")}
+              {isSubmitting ? String(t("contacts.sending")) : String(t("contacts.send"))}
             </button>
             {isSubmitSuccessful && (
               <span className="text-sm text-green-400 ml-3">
-                {t("contacts.sent")}
+                {String(t("contacts.sent"))}
               </span>
             )}
           </div>

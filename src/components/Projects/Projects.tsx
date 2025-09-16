@@ -4,12 +4,21 @@ import ProjectCard from "./ProjectCard/ProjectCard";
 import { ExternalLink, Github } from "lucide-react";
 import { useI18n } from "@/lib/i18n";
 
+type Project = {
+  title: string;
+  description?: string;
+  technologies?: string[];
+  code?: string;
+  live?: string;
+  workingon?: boolean;
+};
+
 const Projects = () => {
   const { t } = useI18n();
-  const list = t("projects.list", []) as any[];
-  const projectsData = Array.isArray(list) ? list : [];
+  const raw = t("projects.list", []) as unknown;
+  const projectsData: Project[] = Array.isArray(raw) ? (raw as Project[]) : [];
 
-  const icons = [<Github />, <ExternalLink />, <Github />];
+  const icons = [<Github key="icon-github-0" />, <ExternalLink key="icon-external-1" />, <Github key="icon-github-2" />];
 
   return (
     <section id="projects" className="py-16 px-4">
@@ -17,7 +26,7 @@ const Projects = () => {
         <div className="flex flex-wrap gap-6 justify-start">
           {projectsData.map((project, index) => (
             <ProjectCard
-              key={index}
+              key={project.title ?? `project-${index}`}
               img={
                 index === 0
                   ? "/portofliobuilder.png"
@@ -26,8 +35,8 @@ const Projects = () => {
                   : "/s7ete.png"
               }
               title={project.title}
-              description={project.description}
-              technologies={project.technologies}
+              description={project.description ?? ""}
+              technologies={project.technologies ?? []}
               code={project.code}
               showCode={!!project.code}
               showLive={!!project.live}

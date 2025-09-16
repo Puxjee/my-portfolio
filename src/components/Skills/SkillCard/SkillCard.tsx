@@ -1,6 +1,6 @@
 import React from "react";
 
-const SkillCard = ({ title, skills }) => {
+const SkillCard = ({ title, skills }: { title: string; skills: string[] }) => {
   return (
     <div>
       <div className=" border-gray-400 border-1 w-45">

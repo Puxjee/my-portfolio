@@ -23,7 +23,7 @@ const Separator = ({
   showViewAll?: boolean;
 }) => {
   const { t } = useI18n();
-  const label = textKey ? t(textKey, text ?? "") : text ?? "";
+  const label = String(textKey ? t(textKey, text ?? "") : text ?? "");
   return (
     <div id={id} className="flex items-center my-4 py-2 w-full max-w-6xl">
       <div className="flex items-center flex-shrink-0">
@@ -58,7 +58,7 @@ const Separator = ({
               } as React.CSSProperties
             }
           >
-            {t("nav.viewAll", "View All ~~>")}
+            {String(t("nav.viewAll", "View All ~~>"))}
           </span>
         </Link>
       </div>

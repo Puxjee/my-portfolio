@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Footer from "@/components/ui/Footer/Footer";
 import React, { useEffect } from "react";
 
 export default function NotFound() {

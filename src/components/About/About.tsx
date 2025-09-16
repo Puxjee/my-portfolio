@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 import ProfileCard from "../ProfileCard/ProfileCard";
 import { useI18n } from "@/lib/i18n";
@@ -14,16 +13,16 @@ const About = () => {
     >
       <div className="max-w-xl text-gray-300 text-left space-y-6">
         {/*about me text */}
-        <p>{t("about.intro")}</p>
-        <p>{t("about.paragraph1")}</p>
-        <p>{t("about.paragraph2")}</p>
-        <p>{t("about.paragraph3")}</p>
-        <p>✨ {t("about.whatIBring")}</p>
+        <p>{String(t("about.intro"))}</p>
+        <p>{String(t("about.paragraph1"))}</p>
+        <p>{String(t("about.paragraph2"))}</p>
+        <p>{String(t("about.paragraph3"))}</p>
+        <p>✨ {String(t("about.whatIBring"))}</p>
         <ul>
-          <li>• {t("about.list1")}</li>
-          <li>• {t("about.list2")}</li>
-          <li>• {t("about.list3")}</li>
-          <li>• {t("about.list4")}</li>
+          <li>• {String(t("about.list1"))}</li>
+          <li>• {String(t("about.list2"))}</li>
+          <li>• {String(t("about.list3"))}</li>
+          <li>• {String(t("about.list4"))}</li>
         </ul>
       </div>
       {/*about me image */}
@@ -38,8 +37,8 @@ const About = () => {
         enableMobileTilt={false}
         mobileTiltSensitivity={0}
         miniAvatarUrl=""
-        name={t("profile.name")}
-        title={t("profile.title")}
+  name={String(t("profile.name"))}
+  title={String(t("profile.title"))}
         handle="puxje"
         showUserInfo={true}
       />

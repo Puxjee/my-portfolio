@@ -1,7 +1,6 @@
 import React from "react";
 import SkillCard from "./SkillCard/SkillCard";
 import Image from "next/image";
-import { title } from "process";
 
 const Skills = () => {
   const skillsData = [
