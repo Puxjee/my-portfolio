@@ -2,6 +2,7 @@
 
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import React from "react";
+import { useI18n } from "@/lib/i18n";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,6 +17,7 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 const Contacts = () => {
+  const { t } = useI18n();
   const {
     register,
     handleSubmit,
@@ -51,11 +53,8 @@ const Contacts = () => {
       {/* left side with info... */}
       <div className="max-w-xl text-gray-300 text-left space-y-6">
         {" "}
-        <h1 className="text-4xl font-bold">How to reach me?</h1>{" "}
-        <p className="text-sm text-gray-400">
-          {" "}
-          Feel free to send a message, I'll get back to you ASAP.{" "}
-        </p>{" "}
+        <h1 className="text-4xl font-bold">{t("contacts.howTo")}</h1>{" "}
+        <p className="text-sm text-gray-400">{t("contacts.feelFree")}</p>{" "}
         <div className="mt-4 text-xs text-gray-400 border-2 border-gray-400 w-1/2 p-4 space-y-2">
           {" "}
           <a
@@ -97,9 +96,9 @@ const Contacts = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="w-full" noValidate>
           <div className="border-b border-gray-700 pb-3 mb-4">
             <h2 className="text-lg text-primary font-semibold">
-              Leave a message!
+              {t("contacts.leaveMessage")}
             </h2>
-            <p className="text-xs text-gray-400">I'll reach you back</p>
+            <p className="text-xs text-gray-400">{t("contacts.iWillReach")}</p>
           </div>
 
           {/* Name + Email */}
@@ -108,7 +107,7 @@ const Contacts = () => {
               <input
                 {...register("name")}
                 type="text"
-                placeholder="Name"
+                placeholder={t("contacts.placeholders.name")}
                 className="bg-transparent border border-gray-600 px-3 py-2 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
               />
               {errors.name && (
@@ -122,7 +121,7 @@ const Contacts = () => {
               <input
                 {...register("email")}
                 type="email"
-                placeholder="Email"
+                placeholder={t("contacts.placeholders.email")}
                 className="bg-transparent border border-gray-600 px-3 py-2 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
               />
               {errors.email && (
@@ -138,7 +137,7 @@ const Contacts = () => {
             <input
               {...register("title")}
               type="text"
-              placeholder="Title"
+              placeholder={t("contacts.placeholders.title")}
               className="w-full mb-3 bg-transparent border border-gray-600 px-3 py-2 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500"
             />
             {errors.title && (
@@ -152,7 +151,7 @@ const Contacts = () => {
           <div className="flex flex-col">
             <textarea
               {...register("message")}
-              placeholder="Message"
+              placeholder={t("contacts.placeholders.message")}
               rows={7}
               className="w-full mb-4 bg-transparent border border-gray-600 px-3 py-3 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-purple-500 resize-none"
             />
@@ -170,10 +169,12 @@ const Contacts = () => {
               disabled={isSubmitting}
               className="cursor-pointer text-white px-5 py-2 border border-purple-500 bg-transparent hover:bg-purple-600 hover:border-purple-600 transition-colors disabled:opacity-50"
             >
-              {isSubmitting ? "Sending..." : "Send"}
+              {isSubmitting ? t("contacts.sending") : t("contacts.send")}
             </button>
             {isSubmitSuccessful && (
-              <span className="text-sm text-green-400 ml-3">Message sent.</span>
+              <span className="text-sm text-green-400 ml-3">
+                {t("contacts.sent")}
+              </span>
             )}
           </div>
         </form>

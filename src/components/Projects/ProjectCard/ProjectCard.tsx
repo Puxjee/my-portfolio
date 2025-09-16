@@ -1,7 +1,9 @@
+"use client";
 import Button from "@/components/shared/Button/Button";
 import { Dot, Github } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { useI18n } from "@/lib/i18n";
 
 interface ProjectCardProps {
   img: string;
@@ -25,13 +27,17 @@ const ProjectCard = ({
   code,
   technologies,
   description,
-  liveText = "Live <~~>",
+  liveText = undefined,
   codeIcon = <Github />,
   showLive = true,
   showCode = true,
   workingon = false,
-  codeLabel = "Code",
+  codeLabel = undefined,
 }: ProjectCardProps) => {
+  const { t } = useI18n();
+  const resolvedLiveText = liveText ?? t("projects.liveText", "Live ~~>");
+  const resolvedCodeLabel = codeLabel ?? t("projects.codeLabel", "Code");
+  const wipLabel = t("projects.wip", "WIP");
   return (
     <div className="border border-[#ABB2BF] bg-[#282C33] w-80 max-w-sm">
       {/* Project Image */}
@@ -58,7 +64,7 @@ const ProjectCard = ({
             <span className="text-[#C778DD] flex items-center">
               <Dot className="w-15 h-15 fill-current drop-shadow-[0_0_8px_#C778DD] animate-pulse" />
               <span className="text-sm drop-shadow-[0_0_4px_#C778DD] -ml-1">
-                WIP
+                {wipLabel}
               </span>
             </span>
           )}
@@ -70,7 +76,7 @@ const ProjectCard = ({
         {/* Buttons */}
         <div className="flex gap-4">
           <Button
-            text={liveText}
+            text={resolvedLiveText}
             onClick={
               showLive && live ? () => window.open(live, "_blank") : undefined
             }
@@ -80,7 +86,7 @@ const ProjectCard = ({
           />
 
           <Button
-            text={codeLabel}
+            text={resolvedCodeLabel}
             onClick={
               showCode && code ? () => window.open(code, "_blank") : undefined
             }

@@ -13,6 +13,7 @@ const Home = () => {
       <Hero />
       <Separator
         id="sep-projects"
+        textKey="nav.works"
         text="projects"
         href="/projects"
         textColor="#FFFFFF"
@@ -23,6 +24,7 @@ const Home = () => {
       <Projects />
       <Separator
         id="sep-skills"
+        textKey="nav.skills"
         text="skills"
         href="/skills"
         showViewAll={false}
@@ -33,6 +35,7 @@ const Home = () => {
       <Skills />
       <Separator
         id="sep-about"
+        textKey="nav.about"
         text="about-me"
         href="/about"
         showViewAll={false}
@@ -43,6 +46,7 @@ const Home = () => {
       <About />
       <Separator
         id="sep-contacts"
+        textKey="nav.contacts"
         text="contacts"
         href="/contacts"
         showViewAll={false}

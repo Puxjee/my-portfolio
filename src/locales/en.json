@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "brand": "Meleek",
+    "home": "home",
+    "works": "works",
+    "about": "about-me",
+    "contacts": "contacts",
+    "selectPlaceholder": "EN",
+    "skills": "skills",
+    "viewAll": "View All ~~>"
+  },
+  "profile": {
+    "contact": "Contact",
+    "contactMe": "Contact Me",
+    "statusOnline": "Online",
+    "name": "Melek ElMokhtar",
+    "title": "Full-Stack Web Developer"
+  },
+  "site": {
+    "title": "Melek ElMokhtar"
+  },
+  "about": {
+    "intro": "Hi, I’m Melek ElMokhtar, a Full-Stack Web Developer passionate about turning complex ideas into elegant, user-friendly applications.",
+    "paragraph1": "With a background in Next.js, React, Node.js, and modern databases (PostgreSQL, MongoDB, Prisma), I enjoy building solutions that are not only scalable but also deliver real business impact.",
+    "paragraph2": "I thrive at the intersection of frontend precision and backend performance. Whether it’s designing a responsive interface, implementing real-time dashboards, or developing secure APIs, I bring a full-stack approach that connects the dots between user experience and technical reliability.",
+    "paragraph3": "My recent projects range from delivering a collaborative documentation portal (MVP in 12 weeks, Scrum) to creating an e-commerce platform with secure payments and stock management.",
+    "whatIBring": "What I bring:",
+    "list1": "Strong command of JavaScript/TypeScript, Next.js, React, Node.js, Express",
+    "list2": "Expertise in database design & cloud integration (PostgreSQL, MongoDB, Firebase, Azure)",
+    "list3": "Experience delivering end-to-end solutions, from UX to deployment",
+    "list4": "A collaborative spirit, adaptability, and problem-solving under tight deadlines"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Fullstack Web Developer",
+    "craft": "I craft",
+    "contactButton": "Contact me!!",
+    "currentlyWorking": "Currently working",
+    "words": ["Scalable", "Modern", "User-friendly"]
+  },
+  "projects": {
+    "liveText": "Live ~~>",
+    "codeLabel": "Read More",
+    "wip": "WIP",
+    "list": [
+      {
+        "title": "Portfolio Builder",
+        "description": "Build your own portfolio in minutes, 0 coding skills required",
+        "technologies": ["Typescript", "NextJS", "PostgreSQL", "Prisma"],
+        "workingon": true
+      },
+      {
+        "title": "IMEX DOCS",
+        "description": "Collaborative enterprise document portal with AI-powered automation and secure payment integration.",
+        "technologies": [
+          "React",
+          "Next.js",
+          "FastAPI",
+          "Prisma",
+          "PostgreSQL",
+          "ChromaDB",
+          "LangChain",
+          "Tailwind CSS"
+        ],
+        "code": "https://github.com/Puxjee/IMEX_DOCS_README/blob/main/README.md",
+        "workingon": false
+      },
+      {
+        "title": "S7ete e-commerce",
+        "description": "A streetwear e-commerce shop for S7ete Studio",
+        "technologies": [
+          "ReactJS",
+          "Express",
+          "Node.js",
+          "Tailwind CSS",
+          "MongoDB"
+        ],
+        "workingon": false
+      }
+    ]
+  },
+  "contacts": {
+    "howTo": "How to reach me?",
+    "feelFree": "Feel free to send a message, I'll get back to you ASAP.",
+    "leaveMessage": "Leave a message!",
+    "iWillReach": "I'll reach you back",
+    "placeholders": {
+      "name": "Name",
+      "email": "Email",
+      "title": "Title",
+      "message": "Message"
+    },
+    "sending": "Sending...",
+    "send": "Send",
+    "sent": "Message sent."
+  }
+}

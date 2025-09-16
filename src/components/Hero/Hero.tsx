@@ -2,14 +2,20 @@
 import { ExternalLink, Link, Square, SquareIcon } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { useI18n } from "@/lib/i18n";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import Button from "../shared/Button/Button";
 import Quote from "./Quote/Quote";
 import HangingSocials from "./HangingSocials/HangingSocials";
 
 const Hero = () => {
+  const { t } = useI18n();
+  const words = (
+    t("hero.words", ["Scalable", "Modern", "User-friendly"]) as string[]
+  ).map(String);
+
   const [text] = useTypewriter({
-    words: ["Scalable", "Modern", "User-friendly"],
+    words,
     loop: true,
     typeSpeed: 70,
     deleteSpeed: 50,
@@ -21,11 +27,12 @@ const Hero = () => {
       <div className="gap-24 items-center flex justify-center">
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-white leading-tight mb-6 w-115">
-            Hi, I'm <span className="text-primary italic">Melek ElMokhtar</span>
-            , a <span className="text-primary">Fullstack Web Developer</span>
+            {t("hero.greeting")}{" "}
+            <span className="text-primary italic">Melek ElMokhtar</span>, a{" "}
+            <span className="text-primary">{t("hero.role")}</span>
           </h1>
           <p className="text-lg text-gray w-130">
-            I craft{" "}
+            {t("hero.craft")}{" "}
             <span className="text-primary">
               {text}
               <Cursor cursorBlinking={false} />
@@ -33,7 +40,7 @@ const Hero = () => {
             web applications.
           </p>
           <Button
-            text="Contact me!!"
+            text={t("hero.contactButton")}
             className="border-[#C778DD] hover:bg-[#C778DD]/[0.08] transition-all duration-300 ease-in-out w-38 mt-8"
             onClick={() => {
               window.location.href = "mailto:melek.elmokhtar@gmail.com";
@@ -49,7 +56,8 @@ const Hero = () => {
           />
           <p className="border-1 p-3 text-gray text-sm flex items-center">
             <SquareIcon fill="#77a2d1" className="inline-block mr-2" />
-            Currently working <span className="text-blue-300 mx-2">@</span>{" "}
+            {t("hero.currentlyWorking")}{" "}
+            <span className="text-blue-300 mx-2">@</span>{" "}
             <a
               href="http://imex.com.tn/"
               target="_blank"

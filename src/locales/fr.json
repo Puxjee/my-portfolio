@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "brand": "Meleek",
+    "home": "accueil",
+    "works": "projets",
+    "about": "a-propos",
+    "contacts": "contacts",
+    "selectPlaceholder": "FR",
+    "skills": "compétences",
+    "viewAll": "Voir tout ~~>"
+  },
+  "profile": {
+    "contact": "Contact",
+    "contactMe": "Contactez-moi",
+    "statusOnline": "En ligne",
+    "name": "Melek ElMokhtar",
+    "title": "Développeur Web Full-Stack"
+  },
+  "site": {
+    "title": "Melek ElMokhtar"
+  },
+  "about": {
+    "intro": "Bonjour, je suis Melek ElMokhtar, développeur web Full-Stack passionné par la transformation d'idées complexes en applications élégantes et conviviales.",
+    "paragraph1": "Avec une expérience en Next.js, React, Node.js et des bases de données modernes (PostgreSQL, MongoDB, Prisma), j'aime construire des solutions évolutives qui apportent une réelle valeur métier.",
+    "paragraph2": "Je m'épanouis à l'intersection de la précision front-end et des performances back-end. Qu'il s'agisse de concevoir une interface réactive, d'implémenter des tableaux de bord en temps réel ou de développer des API sécurisées, j'apporte une approche full-stack.",
+    "paragraph3": "Mes projets récents vont d'un portail de documentation collaboratif (MVP en 12 semaines, Scrum) à une plateforme e-commerce avec paiements sécurisés et gestion des stocks.",
+    "whatIBring": "Ce que j'apporte:",
+    "list1": "Maîtrise de JavaScript/TypeScript, Next.js, React, Node.js, Express",
+    "list2": "Expertise en conception de bases de données & intégration cloud (PostgreSQL, MongoDB, Firebase, Azure)",
+    "list3": "Expérience de livraison de solutions de bout en bout, de l'UX au déploiement",
+    "list4": "Esprit collaboratif, adaptabilité et résolution de problèmes sous pression"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "role": "Développeur Web Fullstack",
+    "craft": "Je crée",
+    "contactButton": "Contactez-moi !!",
+    "currentlyWorking": "Actuellement chez",
+    "words": ["Evolutif", "Moderne", "Convivial"]
+  },
+  "projects": {
+    "liveText": "En ligne ~~>",
+    "codeLabel": "Lire la suite",
+    "wip": "En cours",
+    "list": [
+      {
+        "title": "Portfolio Builder",
+        "description": "Créez votre portfolio en quelques minutes, sans compétences en codage requises",
+        "technologies": ["Typescript", "NextJS", "PostgreSQL", "Prisma"],
+        "workingon": true
+      },
+      {
+        "title": "IMEX DOCS",
+        "description": "Portail de documentation d'entreprise collaboratif avec automatisation IA et intégration de paiement sécurisée.",
+        "technologies": [
+          "React",
+          "Next.js",
+          "FastAPI",
+          "Prisma",
+          "PostgreSQL",
+          "ChromaDB",
+          "LangChain",
+          "Tailwind CSS"
+        ],
+        "code": "https://github.com/Puxjee/IMEX_DOCS_README/blob/main/README.md",
+        "workingon": false
+      },
+      {
+        "title": "S7ete e-commerce",
+        "description": "Une boutique e-commerce streetwear pour S7ete Studio",
+        "technologies": [
+          "ReactJS",
+          "Express",
+          "Node.js",
+          "Tailwind CSS",
+          "MongoDB"
+        ],
+        "workingon": false
+      }
+    ]
+  },
+  "contacts": {
+    "howTo": "Comment me contacter ?",
+    "feelFree": "N'hésitez pas à envoyer un message, je vous répondrai dès que possible.",
+    "leaveMessage": "Laisser un message !",
+    "iWillReach": "Je vous répondrai",
+    "placeholders": {
+      "name": "Nom",
+      "email": "Email",
+      "title": "Titre",
+      "message": "Message"
+    },
+    "sending": "Envoi...",
+    "send": "Envoyer",
+    "sent": "Message envoyé."
+  }
+}

@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
+import { useI18n } from "@/lib/i18n";
 import "./ProfileCard.css";
 
 interface ProfileCardProps {
@@ -75,6 +76,9 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   showUserInfo = true,
   onContactClick,
 }) => {
+  const { t } = useI18n();
+  const resolvedContactText = contactText ?? t("profile.contact", "Contact");
+  const resolvedStatus = status ?? t("profile.statusOnline", "Online");
   const wrapRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -355,7 +359,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   </div>
                   <div className="pc-user-text">
                     <div className="pc-handle">@{handle}</div>
-                    <div className="pc-status">{status}</div>
+                    <div className="pc-status">{resolvedStatus}</div>
                   </div>
                 </div>
                 <button
@@ -365,7 +369,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                   type="button"
                   aria-label={`Contact ${name || "user"}`}
                 >
-                  {contactText}
+                  {resolvedContactText}
                 </button>
               </div>
             )}

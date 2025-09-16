@@ -1,9 +1,12 @@
+"use client";
 import Link from "next/link";
 import React from "react";
+import { useI18n } from "@/lib/i18n";
 
 const Separator = ({
   id,
   text,
+  textKey,
   href,
   textColor,
   separatorColor,
@@ -11,13 +14,16 @@ const Separator = ({
   showViewAll = true,
 }: {
   id?: string;
-  text: string;
+  text?: string;
+  textKey?: string;
   href: string;
   textColor: string;
   separatorColor: string;
   viewAllColor: string;
   showViewAll?: boolean;
 }) => {
+  const { t } = useI18n();
+  const label = textKey ? t(textKey, text ?? "") : text ?? "";
   return (
     <div id={id} className="flex items-center my-4 py-2 w-full max-w-6xl">
       <div className="flex items-center flex-shrink-0">
@@ -31,7 +37,7 @@ const Separator = ({
           className="pr-2 text-2xl font-semibold"
           style={{ color: textColor }}
         >
-          {text}
+          {label}
         </span>
         <hr
           className="border-t-2 w-xl"
@@ -52,7 +58,7 @@ const Separator = ({
               } as React.CSSProperties
             }
           >
-            View All {"~~>"}
+            {t("nav.viewAll", "View All ~~>")}
           </span>
         </Link>
       </div>

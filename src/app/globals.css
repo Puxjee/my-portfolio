@@ -173,8 +173,6 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* Keep some space below the sticky navbar so the separator remains visible
-   when scrolling to sections. Adjust the value if your navbar height changes. */
 #projects, #skills, #about, #contacts, #sep-projects, #sep-skills, #sep-about, #sep-contacts {
   scroll-margin-top: 5rem;
 }
