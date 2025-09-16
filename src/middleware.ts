@@ -50,9 +50,6 @@ export function middleware(req: NextRequest) {
       "Strict-Transport-Security",
       "max-age=63072000; includeSubDomains; preload"
     );
-    res.headers.set("Cross-Origin-Opener-Policy", "same-origin");
-    res.headers.set("Cross-Origin-Embedder-Policy", "require-corp");
-    res.headers.set("Cross-Origin-Resource-Policy", "same-origin");
     res.headers.set("Content-Security-Policy", CSP);
   }
 
