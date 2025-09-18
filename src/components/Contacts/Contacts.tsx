@@ -22,20 +22,44 @@ const Contacts = () => {
     handleSubmit,
     reset,
     formState: { errors, isSubmitting, isSubmitSuccessful },
-  } = useForm<ContactFormData>();
+  } = useForm<ContactFormData>({
+    resolver: async (values) => {
+      const result = contactSchema.safeParse(values as ContactFormData);
+      if (result.success) {
+        return { values: result.data, errors: {} };
+      }
+
+      const errors = {} as Record<string, unknown>;
+      result.error.issues.forEach((issue) => {
+        const path = String(issue.path[0] ?? "root");
+        errors[path] = { type: String(issue.code), message: issue.message };
+      });
+
+      return { values: {}, errors };
+    },
+  });
 
   const onSubmit = async (data: ContactFormData) => {
     try {
       const res = await fetch("https://formspree.io/f/mandzrbw", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify(data),
       });
 
       if (res.ok) {
         reset();
       } else {
-        console.error("Formspree error", res.statusText);
+        let bodyText: string | undefined;
+        try {
+          bodyText = await res.text();
+        } catch (e) {
+          bodyText = undefined;
+        }
+        console.error("Formspree error", res.status, res.statusText, bodyText);
       }
     } catch (err) {
       console.error("Submit error", err);
